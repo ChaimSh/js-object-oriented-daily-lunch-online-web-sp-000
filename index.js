@@ -69,7 +69,9 @@ const Meal = (() => {
     }
 
     static byPrice() {
-        return store.meals.sort((a, b) => a.price < b.price);
+        return store.meals.sort(function(a, b) {
+           return parseFloat(a.price) - parseFloat(b.price);
+         });
       }
   };
 })();
