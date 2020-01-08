@@ -23,7 +23,7 @@ const Neighborhood = (() => {
         // const merged = [].concat.apply([], allMeals);
         return [...new Set(allMeals)];
       }
-      
+
    };
 })();
 
