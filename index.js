@@ -18,16 +18,12 @@ const Neighborhood = (() => {
         return store.customers.filter(customer => customer.neighborhoodId === this.id)
       }
 
-    //   meals() {
-    //   const allMeals = this.customers().map(customer => customer.meals());
-    //   const merged = [].concat.apply([], allMeals);
-    //   return [...new Set(merged)];
-    // }
-      meals(){
-        // return this.deliveries().map(delivery => delivery.meal())
-        return this.customers().map(customer => customer.meals());
+      meals() {
+        const allMeals = this.customers().map(customer => customer.meals());
+        // const merged = [].concat.apply([], allMeals);
+        return [...new Set(allMeals)];
       }
-
+      
    };
 })();
 
