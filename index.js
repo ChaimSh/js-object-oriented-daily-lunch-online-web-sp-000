@@ -18,9 +18,14 @@ const Neighborhood = (() => {
         return store.customers.filter(customer => customer.neighborhoodId === this.id)
       }
 
-      meals(){
-        return this.deliveries().map(delivery => delivery.meal())
-      }
+      meals() {
+      const allMeals = this.customers().map(customer => customer.meals());
+      const merged = [].concat.apply([], allMeals);
+      return [...new Set(merged)];
+    }
+      // meals(){
+      //   return this.deliveries().map(delivery => delivery.meal())
+      // }
 
    };
 })();
