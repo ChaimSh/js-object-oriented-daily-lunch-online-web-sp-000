@@ -45,7 +45,7 @@ const Customer = (() =>{
     }
 
     totalSpent() {
-      //  return this.meals.price.total
+       return this.meals.reduce((total, meal) => (total += meal.price), 0)
     }
   };
 })();
