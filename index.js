@@ -70,7 +70,7 @@ const Meal = (() => {
 
     static byPrice() {
         return store.meals.sort(function(a, b) {
-           return parseFloat(a.price) - parseFloat(b.price);
+           return parseFloat(b.price) - parseFloat(a.price);
          });
       }
   };
